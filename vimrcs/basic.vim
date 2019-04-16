@@ -33,6 +33,8 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 
+set nu
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -42,10 +44,10 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+let mapleader = " "
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader><leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -63,17 +65,6 @@ let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-
-" Turn on the Wild menu
-set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
 
 "Always show current position
 set ruler
@@ -204,8 +195,8 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+" map <space> /
+"map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
